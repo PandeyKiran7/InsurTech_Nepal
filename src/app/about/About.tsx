@@ -5,15 +5,13 @@ const AboutPage: React.FC = () => {
   return (
     <div id="about" className="py-28 bg-white">
       <section className="max-w-6xl mx-auto px-4">
-        {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">About Insurtech Nepal</h2>
+          <h2 className="text-4xl font-extrabold text-gray-800">About Insurtech Nepal</h2>
           <p className="text-gray-500 mt-2">
             Pioneering the digital transformation of Nepal's insurance industry
           </p>
         </div>
-
-        {/* Our Story */}
+        
         <div className="bg-white p-8 rounded-2xl shadow-lg mb-16">
           <h3 className="text-2xl font-semibold text-blue-600 mb-6">Our Story</h3>
           <p className="text-gray-600 leading-relaxed mb-10">
@@ -23,8 +21,7 @@ const AboutPage: React.FC = () => {
             developers and insurance experts who saw the potential to transform
             traditional insurance processes through cutting-edge technology.
           </p>
-
-          {/* Vision / Mission / Values */}
+        
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {

@@ -51,7 +51,7 @@ const TechnologyPage: React.FC = () => {
   return (
     <section className="py-28 px-4 bg-[#f7fafc]" id="technology">
       <div className="max-w-6xl mx-auto space-y-20">
-        {/* Technology Stack */}
+    
         <div>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-extrabold text-gray-800">Our Technology Stack</h2>

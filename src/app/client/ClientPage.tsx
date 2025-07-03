@@ -34,17 +34,16 @@ const ClientPage = () => {
   return (
     <section className="bg-[#f7fafc] py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Heading */}
+     
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+          <h2 className="text-4xl font-extrabold text-gray-800">
             Our Valued Clients
           </h2>
           <p className="text-lg md:text-xl text-gray-600">
             Proudly serving the leading insurance companies and institutions in Nepal.
           </p>
         </div>
-
-        {/* Description & Logo Grid */}
+   
         <div className="bg-white shadow-lg rounded-2xl p-10">
           <p className="text-center text-gray-700 text-lg leading-relaxed mb-8">
             We are honored to partner with a diverse range of insurance providers. Our solutions are

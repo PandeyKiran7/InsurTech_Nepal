@@ -81,7 +81,7 @@ const ProductPage: React.FC = () => {
     <section className="bg-[#f7fafc] py-24 px-4" id="products">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+          <h2 className="text-4xl font-extrabold text-gray-800">
             Our Comprehensive Product Suite
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
