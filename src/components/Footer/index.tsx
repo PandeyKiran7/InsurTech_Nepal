@@ -11,7 +11,7 @@ import {
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 import Image from 'next/image';
-import Logo from "../../../public/logo.png";
+
 
 const Footer = () => {
   const pathname = usePathname();
@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
               <Image
-                src={Logo}
+                src="/Logo.png"
                 alt="Logo"
                 className="rounded-sm"
                 width={100}
