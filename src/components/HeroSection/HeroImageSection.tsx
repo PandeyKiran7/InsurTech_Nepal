@@ -18,14 +18,13 @@ const HeroImageSection: FC<HeroImageSectionProps> = ({
   textColor = 'text-black',
 }) => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Optimized image with Next.js */}
+    <div className=" w-full h-100 overflow-hidden">
       <Image
         src={imageSrc}
         alt="Hero"
         fill
-        className="object-cover z-0"
         priority
+        height={100}
       />
       <div
         className={`relative z-10 flex flex-col items-center justify-center text-center h-full px-4 bg-opacity-50 ${textColor}`}

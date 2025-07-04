@@ -8,10 +8,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+      
       <Image
-        src="/gallery-banner.jpg" // ✅ Make sure this is correct
+        src="/gallery-banner.jpg" 
         alt="Background"
         fill
         className="object-cover object-center -z-10"
@@ -33,13 +33,13 @@ const HeroSection = () => {
         <div className="flex justify-center gap-6 flex-wrap">
           <button
             onClick={handleButtonClick}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium"
+            className="bg-[#44c9c0] hover:bg-[#44c9c0] text-white px-6 py-3 rounded-md font-medium"
           >
             Explore Solutions
           </button>
           <button
             onClick={handleButtonClick}
-            className="border border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-md font-medium"
+            className="border border-white text-white hover:bg-white hover:text-[#44c9c0] px-6 py-3 rounded-md font-medium"
           >
             Request Demo
           </button>
