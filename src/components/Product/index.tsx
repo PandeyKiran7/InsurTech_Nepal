@@ -1,8 +1,15 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { FaCogs, FaGlobe, FaBrain, FaChartLine } from 'react-icons/fa';
+import React, { useState } from 'react';
+import {
+  FaCogs,
+  FaGlobe,
+  FaBrain,
+  FaChartLine,
+} from 'react-icons/fa';
+import { Check, MoreHorizontal } from 'lucide-react';
+import CTA from '../Cta';
+import ProductHeroSection from '../HeroSection/ProductHeroSection';
 
 type ProductType = {
   Icon: React.ElementType;
@@ -10,6 +17,8 @@ type ProductType = {
   description: string;
   features: string[];
   button: string;
+  useCases?: string[];
+  benefits?: string[];
 };
 
 const products: ProductType[] = [
@@ -58,6 +67,48 @@ const products: ProductType[] = [
     ],
     button: 'Learn More',
   },
+
+  {
+  Icon: FaCogs,
+  title: 'iSolution Core Insurance System',
+  description:
+    'A robust, scalable, and fully integrated core insurance platform designed for both Life and Non-Life insurers.',
+  features: [
+    'Policy Administration',
+    'Claims Management',
+    'Reinsurance Module',
+    'Agent & Broker Portals',
+    'Financial Accounting',
+    'Extensive Reporting & Analytics',
+  ],
+  useCases: [
+    'Automating policy lifecycle from issuance to renewal',
+    'Managing claims efficiently with transparency',
+    'Empowering agents with digital tools for faster service',
+  ],
+  benefits: [
+    'Faster turnaround time and reduced manual errors',
+    'Improved customer satisfaction and retention',
+    'Seamless collaboration across departments',
+  ],
+  button: 'Request a Demo',
+},
+
+  {
+    Icon: FaChartLine,
+    title: 'Advanced Analytics & BI',
+    description:
+      'Transform your data into actionable insights to drive better business decisions and strategic growth.',
+    features: [
+      'Real-time Dashboards',
+      'Predictive Modeling',
+      'Fraud Detection',
+      'Customer Segmentation',
+      'Underwriting Optimization',
+      'Regulatory Compliance Reporting',
+    ],
+    button: 'Discover Insights',
+  },
   {
     Icon: FaChartLine,
     title: 'Advanced Analytics & BI',
@@ -75,53 +126,73 @@ const products: ProductType[] = [
   },
 ];
 
+const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleFeatures = showAll
+    ? product.features
+    : product.features.slice(0, 3);
+
+  return (
+     
+    < div className="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+      <div className="text-center">
+        <product.Icon className="text-xl text-[#2b0569f9] mb-4" />
+      </div>
+      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+        {product.title}
+      </h3>
+      <p className="text-gray-600 mb-4">{product.description}</p>
+      <ul className="text-gray-700 mb-4 space-y-2">
+        {visibleFeatures.map((feature, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <Check className="h-4 w-4 text-[#2b0569f9] mt-1" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      {product.features.length > 3 && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="flex items-center text-[#2b0569f9] text-sm mb-4 hover:underline"
+        >
+          <MoreHorizontal className="h-5 w-5 mr-1" />
+          {showAll ? 'Show Less' : 'Show More'}
+        </button>
+      )}
+    </div>
+    
+  );
+};
+
+
 const ProductPage: React.FC = () => {
   return (
-    
-    <section className="bg-[#f7fafc] py-24 px-4" id="products">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-800">
-            Our Comprehensive Product Suite
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Innovative solutions tailored to every aspect of the insurance value chain.
-          </p>
-        </div>
+    <>
+      <section className="bg-[#f7fafc] py-24 px-4" id="products">
+      {/* <ProductHeroSection/> */}
+        <div className="max-w-7xl mx-auto mt-10">
+          <div className="text-center mb-16">
+            <h2 className="text-base font-extrabold text-gray-800">
+              Our Comprehensive Product Suite
+            </h2>
+            <div className="mx-auto w-10 h-1 bg-[#2b0569f9] mt-1 rounded"></div>
+            <p className="text-2xl font-bold text-[#2b0569f9] max-w-2xl mx-auto mt-6">
+              Innovative solutions tailored to every aspect of the insurance value chain.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {products.map((product, index) => {
-            const { Icon } = product;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition"
-              >
-                <div className="text-center">
-                  <Icon className="text-4xl text-indigo-600 mb-4" />
-                </div>
-                <h3 className="text-xl font-semibold text-center text-gray-800 mb-2">
-                  {product.title}
-                </h3>
-                <p className="text-gray-600 text-center mb-4">{product.description}</p>
-                <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
-                  {product.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <div className="text-center">
-                  <Link href="#contact">
-                    <button className="bg-sky-400 hover:bg-sky-500 text-white font-medium px-6 py-2 rounded-full transition">
-                      {product.button}
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {products.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+        
+        <div className='text-gray-800'>
+        <CTA/>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -8,8 +8,8 @@ const ContactPage: React.FC = () => {
       <section className="max-w-6xl mx-auto px-4">
        
         <div className="text-center mb-12 mt-30">
-          <h2 className="text-4xl font-bold text-sky-600 mb-4 mt-4">Get In Touch</h2>
-          <p className="text-gray-600 text-xl">
+          <h2 className="text-base font-bold text-gray-800 mb-4 mt-4">Get In Touch</h2>
+          <p className=" text-[#2b0569f9] text-2xl font-semibold">
             We'd love to hear from you! Reach out for a demo, partnership inquiries, or support.
           </p>
         </div>
@@ -17,7 +17,7 @@ const ContactPage: React.FC = () => {
         <div className="bg-white shadow-xl rounded-2xl p-8 mb-12">
           <form id="contactForm" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col">
-              <label htmlFor="name" className="text-xl font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="text-base font-medium text-gray-700 mb-1">
                 Your Name
               </label>
               <input
@@ -25,12 +25,12 @@ const ContactPage: React.FC = () => {
                 id="name"
                 name="name"
                 required
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2b0569f9]"
               />
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="email" className="text-xl font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="text-base font-medium text-gray-700 mb-1">
                 Your Email
               </label>
               <input
@@ -38,12 +38,12 @@ const ContactPage: React.FC = () => {
                 id="email"
                 name="email"
                 required
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2b0569f9]"
               />
             </div>
 
             <div className="flex flex-col md:col-span-2">
-              <label htmlFor="subject" className="text-xl font-medium text-gray-700 mb-1">
+              <label htmlFor="subject" className="text-base font-medium text-gray-700 mb-1">
                 Subject
               </label>
               <input
@@ -56,7 +56,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             <div className="flex flex-col md:col-span-2">
-              <label htmlFor="message" className="text-xl font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="text-base font-medium text-gray-700 mb-1">
                 Your Message
               </label>
               <textarea
@@ -64,14 +64,14 @@ const ContactPage: React.FC = () => {
                 name="message"
                 rows={5}
                 required
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none"
+                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#2b0569f9] resize-none"
               ></textarea>
             </div>
 
           <div className="md:col-span-2 flex justify-center">
   <button
     type="submit"
-    className="bg-sky-400 text-white py-3 px-6 rounded-lg hover:bg-sky-600 transition"
+    className="bg-[#2b0569f9] text-white py-3 px-6 rounded-lg hover:[#2b0569f9] transition"
   >
     Send Message
   </button>
@@ -82,8 +82,9 @@ const ContactPage: React.FC = () => {
 
         {/* Office Info + Map */}
         <div className="bg-white shadow-xl  text-xl rounded-2xl p-8 text-center">
-          <h3 className="text-3xl font-bold text-sky-600 mb-6">Our Office</h3>
-          <div className="text-gray-700 space-y-3">
+          <h3 className="text-base font-bold text-[#2b0569f9] mb-3">Our Office</h3>
+          <div className="w-10 h-1 bg-[#2b0569f9] mx-auto  rounded"></div>
+          <div className="text-gray-700 space-y-3 mt-4">
             <p>
               <i className="fas fa-map-marker-alt text-yellow-500 mr-2"></i>
               Pulchowk, Lalitpur, Nepal

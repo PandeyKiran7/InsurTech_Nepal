@@ -1,14 +1,13 @@
 "use client";
-import { useRouter } from "next/navigation";
 
 import React from "react";
-import Link from "next/link";
 import { FaShieldAlt, FaMobileAlt, FaRobot } from "react-icons/fa";
 import HeroSection from "../HeroSection/HeroSection";
 import { Check, CheckCheckIcon, Ticket } from "lucide-react";
+import ServicesPage from "../Service";
 const HomePage: React.FC = () => {
   return (
-    <div id="home" className="pt-0">
+    <div id="home" className="pt-0 font-poppins">
       <HeroSection />
       <section className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -19,7 +18,7 @@ const HomePage: React.FC = () => {
             ["80%", "Market Share in Nepal"],
           ].map(([number, label], i) => (
             <div key={i} className="bg-white p-6 rounded-xl shadow">
-              <div className="text-3xl font-bold text-[#44c9c0] mb-2">
+              <div className="text-3xl font-bold text-[#2b0569f9] mb-2">
                 {number}
               </div>
               <div className="text-gray-700">{label}</div>
@@ -28,23 +27,26 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Flagship Solutions */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#44c9c0]">
-              Our Flagship Solutions
-            </h2>
-            <p className="text-gray-600 mt-8">
-              Comprehensive insurance technology solutions designed for the
-              modern digital age
+            <div>
+              <h2 className="text-base font-bold text-gray-700">
+                Our Flagship Solutions
+              </h2>
+              <div className=" mx-auto  w-10 h-1 bg-[#2b0569f9] mt-1 rounded"></div>
+            </div>
+            <p className="text-[#2b0569f9] font-bold mt-8 text-2xl">
+              Comprehensive insurance technology solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto py-10">
             {[
               {
-                icon: <FaShieldAlt className="text-4xl text-teal-600 mb-4" />,
+                icon: (
+                  <FaShieldAlt className="text-4xl text-[#2b0569f9] mb-4" />
+                ),
                 title: "iSolution",
                 description:
                   "Complete core insurance system with policy management, claims processing, and financial reporting.",
@@ -56,7 +58,7 @@ const HomePage: React.FC = () => {
                 ],
               },
               {
-                icon: <FaMobileAlt className="text-4xl text-teal-600 mb-4" />,
+                icon: <FaMobileAlt className="text-4xl text-white mb-4" />,
                 title: "eBeema",
                 description:
                   "Digital insurance aggregator platform connecting customers with multiple insurance providers.",
@@ -68,7 +70,7 @@ const HomePage: React.FC = () => {
                 ],
               },
               {
-                icon: <FaRobot className="text-4xl text-teal-600 mb-4" />,
+                icon: <FaRobot className="text-4xl text-[#2b0569f9] mb-4" />,
                 title: "AI Chatbot",
                 description:
                   "Intelligent customer service automation with natural language processing.",
@@ -82,41 +84,70 @@ const HomePage: React.FC = () => {
             ].map((product, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+                className={`relative rounded-2xl shadow-lg transition overflow-hidden ${
+                  index === 1 ? "text-gray-700" : "text-gray-700"
+                } p-6`}
               >
-                {product.icon}
-                <h3 className="text-xl font-semibold  text-gray-800 mb-2">
-                  {product.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <ul className="list-none text-gray-700 space-y-1 mb-4">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="text-teal-600 mt-1 w-6 h-8 stroke-[4]" />
-                      <span className="font-medium">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-               
+                {index === 1 && (
+                  <div className="absolute top-0 left-0 w-full bg-[#2b0569f9] text-white text-base font-semibold text-center py-6 rounded-t-2xl">
+                    FIRST MONTH FREE
+                  </div>
+                )}
+                <div className={`pt-${index === 1 ? "8" : "0"}`}>
+                  {product.icon}
+                  <h3
+                    className={`text-xl font-semibold mb-2 ${
+                      index === 1 ? "text-gray-700" : "text-gray-700"
+                    }`}
+                  >
+                    {product.title}
+                  </h3>
+                  <p
+                    className={`mb-4 text-base ${
+                      index === 1 ? "text-gray-700" : "text-gray-700"
+                    }`}
+                  >
+                    {product.description}
+                  </p>
+
+                  <ul className="list-none space-y-2 mb-4">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check
+                          className={`mt-1 w-5 h-5 stroke-[3] ${
+                            index === 1 ? "text-black" : "text-[black]"
+                          }`}
+                        />
+                        <span
+                          className={`font-medium text-base ${
+                            index === 1 ? "text-gray-700" : "text-gray-700"
+                          }`}
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white drop-[#2b0569f9] gap-8">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-2">
+            <h2 className="font-bold text-base text-gray-700 mb-2">
               What Our Clients Say
             </h2>
-            <p className="text-gray-600">
+            <div className=" mx-auto  w-10 h-1 bg-[#2b0569f9] mt-1 rounded"></div>
+            <p className="text-[#2b0569f9] font-bold mt-8 text-2xl font-poppins">
               Trusted by leading insurance companies across Nepal
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 text: '"Thanks to Insurtech Nepal, we streamlined our entire policy issuance process and reduced processing time by 70%."',
@@ -136,13 +167,15 @@ const HomePage: React.FC = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+                className="bg-gray-100 p-6 rounded-xl shadow-black hover:shadow-md transition"
               >
-                <p className="italic text-gray-700 mb-4">{testimonial.text}</p>
-                <div className="font-semibold text-gray-800">
+                <p className="font-poppins text-base text-gray-700 mb-4">
+                  {testimonial.text}
+                </p>
+                <div className="font-semibold text-gray-700">
                   {testimonial.author}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-base text-gray-500">
                   {testimonial.company}
                 </div>
               </div>
@@ -150,6 +183,8 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+       <ServicesPage/>
+      
     </div>
   );
 };

@@ -67,8 +67,8 @@ const Header: React.FC = () => {
               >
                 {item.name}
                 <span
-                  className={`block h-[4px] mt-2 rounded-xl bg-[#44c9c0]  transition-all duration-300 ${
-                    pathname === item.path ? 'w-10' : 'w-0 group-hover:w-10'
+                  className={`block h-[4px] mt-2 rounded-xl bg-[#2b0569f9] absolute l-0 b-0 transition-all duration-300 ${
+                    pathname === item.path ? ' w-full' : 'w-0 group-hover:w-full'
                   }`}
                 ></span>
               </Link>
