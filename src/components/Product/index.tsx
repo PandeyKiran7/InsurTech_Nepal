@@ -10,6 +10,7 @@ import {
 import { Check, MoreHorizontal } from 'lucide-react';
 import CTA from '../Cta';
 import ProductHeroSection from '../HeroSection/ProductHeroSection';
+import FAQProduct from '../FAQ/FAQProduct';
 
 type ProductType = {
   Icon: React.ElementType;
@@ -168,8 +169,10 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
 const ProductPage: React.FC = () => {
   return (
     <>
-      <section className="bg-[#f7fafc] py-24 px-4" id="products">
-      {/* <ProductHeroSection/> */}
+      <section className="bg-[#f7fafc]" id="products">
+        <div className='text-gray-800'>
+      <ProductHeroSection/>
+        </div>
         <div className="max-w-7xl mx-auto mt-10">
           <div className="text-center mb-16">
             <h2 className="text-base font-extrabold text-gray-800">
@@ -187,8 +190,10 @@ const ProductPage: React.FC = () => {
             ))}
           </div>
         </div>
-        
-        <div className='text-gray-800'>
+        <div className='bg-gray-200 m-20'>
+        <FAQProduct/>
+        </div>
+        <div className='text-gray-800 pt-3'>
         <CTA/>
         </div>
       </section>

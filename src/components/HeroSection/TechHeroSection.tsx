@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const HeroSection = () => {
+const TechHeroSection = () => {
   const router = useRouter();
   const handleButtonClick = () => {
      router.push('/contact'); 
@@ -11,24 +10,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-[450px] flex items-center justify-center overflow-hidden">
-      
-      <Image
-        src="/gallery-banner.jpg" 
-        alt="Background"
-        fill
-        className="object-cover object-center -z-10"
-        priority
-      />
     
       <div className="absolute inset-0 bg-black/40 -z-10" />
 
       <div className="text-center text-white px-4 max-w-4xl">
         <h1 className="text-2xl md:text-5xl font-bold mb-6">
-          Modern Insurance Technology for Nepal and Beyond
+         Advanced Technology Powering the Future of Insurance
         </h1>
         <p className="text-base mb-8">
-          Powering over 80% of Nepal's insurance industry with scalable, secure, and
-          innovative software solutions.
+         Our cloud-native architecture, robust APIs, and AI-driven tools ensure speed, security, and scalability—empowering insurers to innovate faster and serve smarter.
         </p>
         <div className="flex justify-center gap-6 flex-wrap">
           <button
@@ -43,4 +33,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default TechHeroSection;

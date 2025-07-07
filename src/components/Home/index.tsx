@@ -9,8 +9,8 @@ const HomePage: React.FC = () => {
   return (
     <div id="home" className="pt-0 font-poppins">
       <HeroSection />
-      <section className="bg-gray-100 py-16">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="bg-gray-100  py-16">
+        <div className="max-w-6xl mx-auto mt-10 px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             ["40+", "Insurance Companies Served"],
             ["2M+", "Policies Processed"],
@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3  max-w-6xl mx-auto py-10 shadow-sm gap-10 w-full px-20 ">
             {[
               {
                 icon: (
@@ -58,7 +58,9 @@ const HomePage: React.FC = () => {
                 ],
               },
               {
-                icon: <FaMobileAlt className="text-4xl text-white mb-4" />,
+                icon: (
+                  <FaMobileAlt className="text-4xl text-[#2b0569f9] mb-4" />
+                ),
                 title: "eBeema",
                 description:
                   "Digital insurance aggregator platform connecting customers with multiple insurance providers.",
@@ -84,51 +86,31 @@ const HomePage: React.FC = () => {
             ].map((product, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl shadow-lg transition overflow-hidden ${
-                  index === 1 ? "text-gray-700" : "text-gray-700"
-                } p-6`}
+                className={`relative rounded-2xl shadow-2xl bg-white overflow-hidden p-6 ${
+                  index === 1 ? "scale-105 p-8 z-10" : ""
+                } transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_8px_30px_rgba(43,5,105,0.3)]`}
               >
-                {index === 1 && (
-                  <div className="absolute top-0 left-0 w-full bg-[#2b0569f9] text-white text-base font-semibold text-center py-6 rounded-t-2xl">
-                    FIRST MONTH FREE
-                  </div>
-                )}
-                <div className={`pt-${index === 1 ? "8" : "0"}`}>
+                <div className="pt-6 flex flex-col items-start min-h-[120px]">
                   {product.icon}
-                  <h3
-                    className={`text-xl font-semibold mb-2 ${
-                      index === 1 ? "text-gray-700" : "text-gray-700"
-                    }`}
-                  >
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {product.title}
                   </h3>
-                  <p
-                    className={`mb-4 text-base ${
-                      index === 1 ? "text-gray-700" : "text-gray-700"
-                    }`}
-                  >
-                    {product.description}
-                  </p>
-
-                  <ul className="list-none space-y-2 mb-4">
-                    {product.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check
-                          className={`mt-1 w-5 h-5 stroke-[3] ${
-                            index === 1 ? "text-black" : "text-[black]"
-                          }`}
-                        />
-                        <span
-                          className={`font-medium text-base ${
-                            index === 1 ? "text-gray-700" : "text-gray-700"
-                          }`}
-                        >
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
+
+                <p className="mb-4 text-base text-gray-700">
+                  {product.description}
+                </p>
+
+                <ul className="list-none space-y-2 mb-4">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Check className="mt-1 w-5 h-5 stroke-[3] text-black" />
+                      <span className="font-medium text-base text-gray-700">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -172,7 +154,7 @@ const HomePage: React.FC = () => {
                 <p className="font-poppins text-base text-gray-700 mb-4">
                   {testimonial.text}
                 </p>
-                <div className="font-semibold text-gray-700">
+                <div className="font-semibold  text-gray-700">
                   {testimonial.author}
                 </div>
                 <div className="text-base text-gray-500">
@@ -183,8 +165,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-       <ServicesPage/>
-      
+      <ServicesPage />
     </div>
   );
 };

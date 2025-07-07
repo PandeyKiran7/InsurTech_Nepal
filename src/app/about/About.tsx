@@ -1,5 +1,7 @@
 "use client";
 import CTA from "@/components/Cta";
+import FAQAbout from "@/components/FAQ/FAQAbout";
+import AboutHeroSection from "@/components/HeroSection/AboutHeroSection";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import {
   Eye,
@@ -74,8 +76,11 @@ const teamMembers = [
 
 const AboutPage: React.FC = () => {
   return (
-    <div id="about" className="py-28 bg-white">
-      <section className="max-w-6xl mx-auto px-4">
+    <div id="about" className=" bg-white">
+      <div className="text-gray-100 mb-10 bg-[#7f52e8e0]">
+      <AboutHeroSection/>
+      </div>
+      <section className="mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-base font-extrabold text-gray-800">
             About Insurtech Nepal
@@ -86,7 +91,7 @@ const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-lg mb-16">
+        <div className="bg-white p-8 rounded-2xl shadow-lg mx-auto py-10 mb-20 max-w-6xl items-center">
           <h3 className="text-2xl font-semibold text-[#2b0569f9] mb-6">
             Our Story
           </h3>
@@ -118,7 +123,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-12  ">
           <h2 className="text-base font-bold text-gray-800">
             Meet Our Leadership Team
           </h2>
@@ -128,7 +133,7 @@ const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-lg  mb-16">
+        <div className="bg-white p-8 rounded-2xl shadow-lg max-w-6xl  mx-auto mb-16">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
               <Users2 className="text-[#2b0569f9] w-8 h-8" />
@@ -159,7 +164,8 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="text-gray-800">
+          <FAQAbout/>
+        <div className="text-gray-800 bg-white">
           <CTA/>
         </div>
       </section>

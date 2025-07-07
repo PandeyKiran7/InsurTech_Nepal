@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const HeroSection = () => {
+const ClientHeroSection = () => {
   const router = useRouter();
   const handleButtonClick = () => {
      router.push('/contact'); 
@@ -24,11 +24,10 @@ const HeroSection = () => {
 
       <div className="text-center text-white px-4 max-w-4xl">
         <h1 className="text-2xl md:text-5xl font-bold mb-6">
-          Modern Insurance Technology for Nepal and Beyond
+         Trusted by Industry Leaders Across Nepal
         </h1>
         <p className="text-base mb-8">
-          Powering over 80% of Nepal's insurance industry with scalable, secure, and
-          innovative software solutions.
+         Our technology powers over 80% of the country’s insurance market. We’re proud to partner with forward-thinking companies driving digital transformation.
         </p>
         <div className="flex justify-center gap-6 flex-wrap">
           <button
@@ -43,4 +42,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default ClientHeroSection;

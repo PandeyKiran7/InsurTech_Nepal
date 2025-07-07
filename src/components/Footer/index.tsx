@@ -35,7 +35,8 @@ const Footer = () => {
               innovative technology solutions, dedicated to helping businesses
               thrive in the digital age.
             </p>
-            <div className="flex gap-6  ">
+            <div className="space-y-4">
+                    <div className="flex gap-6  ">
               {[FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map(
                 (Icon, index) => (
                   <a
@@ -49,6 +50,8 @@ const Footer = () => {
               )}
             </div>
           </div>
+          </div>
+          
 
           <div className="space-y-4 ml-12 mr-4 cursor-pointer">
             <h3 className="text-2xl font-semibold text-[#2b0569f9] w-24">Services</h3>

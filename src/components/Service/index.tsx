@@ -38,7 +38,7 @@ const ServicesPage: React.FC = () => {
   return (
     <>
       <main className="min-h-screen bg-white text-gray-800">
-        <section className="bg-[#2b0569f9] text-white py-20 px-6 text-center">
+        <section className="bg-[#310e69f9] text-white py-20  text-center">
           <h1 className="text-2xl md:text-5xl font-bold mb-4">Our Services</h1>
           <p className="max-w-2xl mx-auto text-base opacity-90">
             Empowering Nepal’s insurance sector with modern, secure, and intelligent digital solutions.

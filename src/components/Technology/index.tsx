@@ -13,6 +13,8 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import CTA from "../Cta";
+import TechHeroSection from "../HeroSection/TechHeroSection";
+import FAQTech from "../FAQ/FAQTech";
 
 const technologies = [
   {
@@ -74,7 +76,10 @@ const securityItems = [
 
 const TechnologyPage: React.FC = () => {
   return (
-    <section className="py-28 px-4 bg-[#f7fafc]" id="technology">
+    <section className=" bg-[#f7fafc]" id="technology">
+      <div className=" mb-16 bg-blue-300">
+        <TechHeroSection/>
+      </div>
       <div className="max-w-6xl mx-auto space-y-20">
         <div>
           <div className="text-center mb-12">
@@ -141,6 +146,7 @@ const TechnologyPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <FAQTech/>
       <div className="text-gray-800">
       <CTA/>
       </div>

@@ -3,6 +3,8 @@ import { Handshake } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
 import CTA from '@/components/Cta';
+import ClientHeroSection from '@/components/HeroSection/ClientHeroSection';
+import FAQClient from '@/components/FAQ/FAQClient';
 
 const clients = [
   {
@@ -33,9 +35,11 @@ const clients = [
 
 const ClientPage = () => {
   return (
-    <section className="bg-[#f7fafc] py-20 px-4">
+    <section className="bg-[#f7fafc]">
+        <div className=' mb-16 bg-blue-300'>
+     <ClientHeroSection/>
+        </div>
       <div className="max-w-6xl mx-auto">
-     
         <div className="text-center mb-12">
           <h2 className="text-base font-semibold text-gray-800">
             Our Valued Clients
@@ -90,6 +94,7 @@ const ClientPage = () => {
       </div>
     </div>
       </div>
+      <FAQClient/>
       <div className='text-gray-800'>
         <CTA/>
       </div>
